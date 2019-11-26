@@ -69,6 +69,7 @@ describe('TodosComponent', () => {
 
     // test to see if the delete method of the service is called
     it('should call delete service methode',()=>{
+      spyOn(window, 'confirm').and.returnValue(true);
       spyOn(service,'delete').and.returnValue(empty());
 
       component.delete('');
